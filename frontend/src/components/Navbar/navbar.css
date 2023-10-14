@@ -1,3 +1,49 @@
 nav {
-  background: white;
+  background: black;
+  height: 29px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__list {
+  padding: 0;
+}
+
+.nav__item {
+  height: 29px;
+  line-height: 29px;
+  display: inline-block;
+  vertical-align: top;
+  color: white;
+}
+
+.nav__link {
+  color: white;
+  padding: 0 15px;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.nav__link--active {
+  display: inline-block;
+  padding: 0 15px;
+  background-color: #f4dd5e;
+  position: relative;
+  color: black;
+
+  &:hover {
+    color: black;
+  }
+
+  height: 39px;
+  line-height: 39px;
+  top: -5px;
+  border-radius: 5px;
+}
+
+
+.nav__link:hover {
+  color: inherit;
 }

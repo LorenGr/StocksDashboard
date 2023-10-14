@@ -2,16 +2,23 @@ import { NavLink } from 'react-router-dom';
 import './navbar.css';
 const Navbar = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink to="/">Dashboard</NavLink>
+    <nav className="nav">
+      <ul className="nav__list">
+        <li className="nav__item">
+          <NavLink
+            className={
+              ({ isActive }) => isActive ? "nav__link--active" : "nav__link "}
+            to="/">
+            Dashboard
+          </NavLink>
         </li>
-        <li>
-          <NavLink to="/profile">Profile</NavLink>
+        <li className="nav__item">
+          <NavLink className={
+            ({ isActive }) => isActive ? "nav__link--active" : "nav__link "} to="/profile">Profile</NavLink>
         </li>
-        <li>
-          <NavLink to="/statements">Statements</NavLink>
+        <li className="nav__item">
+          <NavLink className={
+            ({ isActive }) => isActive ? "nav__link--active" : "nav__link "} to="/statements">Statements</NavLink>
         </li>
       </ul>
     </nav>
