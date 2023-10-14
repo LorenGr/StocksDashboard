@@ -21,14 +21,23 @@ const SymbolCard = ({ id, onClick, price }: SymbolCardProps) => {
 
   return (
     <div onClick={handleOnClick} className="symbolCard">
-      <div>
-        {id} - {trend}
+      <div className="symbolCard__title">
+        {id}
       </div>
-      <div>Price:</div>
-      <div>{price || 0} </div>
-      <CompanyIcon /> <div>{companyName}</div>
-      <IndustryLogo /> <div>{industry}</div>
-      <MarketCapIcon /> <div>{marketCap}</div>
+      {/* <span> - {trend}</span> */}
+      <div className="symbolCard__priceRow">
+        <div className="symbolCard__priceTitle">Price:</div>
+        <div className="symbolCard__priceValue">${Math.floor(price) || 0} </div>
+      </div>
+      <div className="symbolCard__row">
+        <CompanyIcon className="symbolCard__icon" /> <div className="symbolCard__rowText">{companyName}</div>
+      </div>
+      <div className="symbolCard__row">
+        <IndustryLogo className="symbolCard__icon" /> <div className="symbolCard__rowText">{industry}</div>
+      </div>
+      <div className="symbolCard__row">
+        <MarketCapIcon className="symbolCard__icon" /> <div className="symbolCard__rowText">{marketCap}</div>
+      </div>
     </div>
   );
 };

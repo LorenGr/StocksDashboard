@@ -1,7 +1,8 @@
 .symbolCard {
-  border: 2px solid black; /* just for visibility, feel free to remove it */
-  margin: 10px; /* just for visibility, feel free to remove it */
-  padding: 10px; /* just for visibility, feel free to remove it */
+  height: 173px;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .symbolCard__shake {
@@ -9,6 +10,7 @@
 }
 
 @keyframes shake {
+
   10%,
   90% {
     transform: translateX(-2px);
@@ -35,4 +37,51 @@
   70% {
     transform: translateX(6px);
   }
+}
+
+.symbolCard__title {
+  height: 28px;
+  line-height: 28px;
+  background-color: black;
+  color: white;
+  text-indent: 9px;
+}
+
+.symbolCard__icon {
+  height: 23px;
+}
+
+.symbolCard__row {
+  display: flex;
+  height: 23px;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.symbolCard__rowText {
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  padding-right: 9px;
+}
+
+.symbolCard__priceRow {
+  display: flex;
+  height: 45px;
+}
+
+.symbolCard__priceTitle {
+  text-indent: 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+  flex: 1;
+  line-height: 38px;
+}
+
+.symbolCard__priceValue {
+  padding-right: 9px;
+  font-size: 20px;
+  font-weight: 800;
 }

@@ -1,3 +1,19 @@
+.symbolsView {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 1024px) {
+  .symbolsView {
+    display: block;
+  }
+}
+
 .symbolsView__chart {
   padding: 12px;
+  width: 400px;
+}
+
+.symbolsView__cards {
+  flex: 1;
 }
