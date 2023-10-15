@@ -57,10 +57,12 @@ const SymbolCard = ({ active, id, onClick, price }: SymbolCardProps) => {
 
   const symbolCardClasses = [
     'symbolCard',
-    active != null ? (active ? 'symbolCard__active' : 'symbolCard__inactive') : '',
-    priceShift?.shake
-      ? priceShift?.positive ? 'symbolCard__posShake' : 'symbolCard__negShake'
-      : priceShift?.positive ? 'symbolCard__posGlow' : 'symbolCard__negGlow'
+    active != null
+      ? (active ? 'symbolCard__active' : 'symbolCard__inactive') : '',
+    priceShift != null
+      ? (priceShift?.shake
+        ? priceShift?.positive ? 'symbolCard__posShake' : 'symbolCard__negShake'
+        : priceShift?.positive ? 'symbolCard__posGlow' : 'symbolCard__negGlow') : ''
   ]
 
   return (
