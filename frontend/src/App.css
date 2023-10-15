@@ -79,7 +79,7 @@ select {
 }
 
 .App {
-  padding: 17px 24px 0 0;
+  padding-right: 24px;
   background-color: #e3e3e4;
   min-height: 100%;
 }
@@ -88,7 +88,7 @@ select {
   position: sticky;
   background-color: inherit;
   top: 0;
-  padding-bottom: 35px;
+  padding-bottom: 15px;
   padding-left: 18px;
   z-index: 1;
 }

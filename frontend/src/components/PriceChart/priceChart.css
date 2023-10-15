@@ -4,6 +4,10 @@
   display: flex;
 }
 
+.priceChart__loader {
+  margin-top: 130px;
+}
+
 @media (max-width: 1023px) {
   .priceChart {
     max-height: 250px;
