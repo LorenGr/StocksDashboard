@@ -9,6 +9,8 @@ function formatDecimals(number: number) {
 export function formatLargeNumber(number: number) {
     let result;
 
+    if (!number) return "";
+
     switch (true) {
         case number >= 1e12:
             // If value is in trillions

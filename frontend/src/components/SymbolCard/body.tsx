@@ -15,23 +15,18 @@ type SymbolCardBodyProps = {
     marketCap: number;
     trend: string | null;
 }
+type SymbolCardDetailsProps = {
+    companyName: string;
+    industry: string;
+    marketCap: number;
+}
 
 const trendImages: Record<string, string> = {
     UP: Trend_UP,
     DOWN: Trend_DOWN
 }
-
-export const SymbolCardBody = ({ price, id, trend, companyName, industry, marketCap }: SymbolCardBodyProps) => (
-
+const SymbolCardDetails = React.memo(({ companyName, industry, marketCap }: SymbolCardDetailsProps) => (
     <React.Fragment>
-        <div className="symbolCard__title">
-            {id}
-        </div>
-        {trend && <img className="symbolCard__trend" src={trendImages[trend]} />}
-        <div className="symbolCard__priceRow">
-            <div className="symbolCard__priceTitle">Price: </div>
-            <div className="symbolCard__priceValue">${Math.floor(price) || 0} </div>
-        </div>
         <div className="symbolCard__row">
             <CompanyIcon className="symbolCard__icon" /> <div className="symbolCard__rowText">{companyName}</div>
         </div>
@@ -42,5 +37,20 @@ export const SymbolCardBody = ({ price, id, trend, companyName, industry, market
             <MarketCapIcon className="symbolCard__icon" /> <div className="symbolCard__rowText">${formatLargeNumber(marketCap)}</div>
         </div>
     </React.Fragment>
+));
 
-)
+export const SymbolCardBody = React.memo(({ price, id, trend, companyName, industry, marketCap }: SymbolCardBodyProps) => (
+    <React.Fragment>
+        <div className="symbolCard__title">
+            {id}
+        </div>
+        {trend && <img className="symbolCard__trend" src={trendImages[trend]} />}
+        <div className="symbolCard__priceRow">
+            <div className="symbolCard__priceTitle">Price: </div>
+            <div className="symbolCard__priceValue">
+                {price ? <>${Math.floor(price)}</> : '- -'}
+            </div>
+        </div>
+        <SymbolCardDetails companyName={companyName} industry={industry} marketCap={marketCap} />
+    </React.Fragment>
+));

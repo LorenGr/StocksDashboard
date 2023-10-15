@@ -11,6 +11,7 @@ interface SymbolCardContainerProps {
 }
 
 const getPriceShift = (prevPrice: number, price: number): PriceShift => {
+    if (!price) return null;
     if (price > prevPrice) { //Price went up
         return {
             positive: true,
@@ -47,16 +48,17 @@ export const SymbolCardContainer = ({ active, price, children, onClick }: Symbol
     }, [price]);
 
     useEffect(() => {
-        if (priceShift?.shake) {
-            priceShift.positive
-                ? addShake(true)
-                : addShake(false);
-        } else {
-            priceShift?.positive
-                ? addGlow(true)
-                : addGlow(false);
+        if (priceShift) {
+            if (priceShift?.shake) {
+                priceShift.positive
+                    ? addShake(true)
+                    : addShake(false);
+            } else {
+                priceShift?.positive
+                    ? addGlow(true)
+                    : addGlow(false);
+            }
         }
-
     }, [priceShift]);
 
 
