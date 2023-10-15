@@ -97,4 +97,8 @@ select {
   .App {
     padding: 17px 2px 0 0;
   }
+
+  .App__header {
+    padding-left: 2px;
+  }
 }

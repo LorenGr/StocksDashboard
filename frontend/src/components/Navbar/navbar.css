@@ -3,6 +3,7 @@ nav {
   height: 29px;
   margin: 0;
   padding: 0;
+  border-radius: 5px;
 }
 
 .nav__list {
