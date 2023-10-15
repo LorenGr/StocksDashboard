@@ -9,7 +9,7 @@ A custom React hook that adds animation classes to an HTML element, allowing for
 ### Returns
 - 'useElementAnimationMethods': An object containing two methods for adding shake and glow animations to the element.
 ### Example Usage
-```
+```js
 import { useRef } from 'react';
 import useElementAnimation from './useElementAnimation';
 
