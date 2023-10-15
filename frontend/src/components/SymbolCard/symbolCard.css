@@ -2,11 +2,45 @@
   height: 173px;
   background-color: white;
   border-radius: 5px;
-  overflow: hidden;
+
+  cursor: pointer;
+  position: relative;
+
+  & * {
+    pointer-events: none;
+  }
 }
 
-.symbolCard__shake {
-  animation: shake 0.62s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+@keyframes posGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(1, 163, 0, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgb(1, 163, 1);
+  }
+
+  100% {
+    box-shadow: 0 0 10px rgba(1, 163, 0, 0);
+  }
+}
+
+@keyframes negGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(171, 0, 0, 0);
+  }
+
+  25% {
+    box-shadow: 0 0 20px rgb(171, 0, 0);
+  }
+
+  75% {
+    box-shadow: 0 0 20px rgb(171, 0, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 10px rgba(171, 0, 0, 0);
+  }
 }
 
 @keyframes shake {
@@ -39,12 +73,32 @@
   }
 }
 
+.symbolCard__posShake {
+  animation: posGlow 1s ease-in-out, shake 0.62s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+.symbolCard__negShake {
+  animation: negGlow 1s ease-in-out, shake 0.62s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+.symbolCard__posGlow {
+  animation: posGlow 1s ease-in-out;
+}
+
+.symbolCard__negGlow {
+  animation: negGlow 1s ease-in-out;
+}
+
+
 .symbolCard__title {
   height: 28px;
   line-height: 28px;
   background-color: black;
   color: white;
   text-indent: 9px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
 }
 
 .symbolCard__icon {
@@ -84,4 +138,12 @@
   padding-right: 9px;
   font-size: 20px;
   font-weight: 800;
+}
+
+.symbolCard__trend {
+  width: 50px;
+  height: 40px;
+  position: absolute;
+  top: -12px;
+  right: -15px;
 }

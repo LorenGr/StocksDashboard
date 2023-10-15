@@ -1,6 +1,7 @@
 .symbolsView {
   display: flex;
   flex-direction: row-reverse;
+  padding: 10px 0;
 }
 
 @media (max-width: 1024px) {

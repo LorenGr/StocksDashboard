@@ -5,8 +5,10 @@ import Router from '@/router';
 function App() {
   return (
     <div className="App">
-      <h2>STONKS</h2>
-      <Navbar />
+      <div className="App__header">
+        <h2>STONKS</h2>
+        <Navbar />
+      </div>
       <Router />
     </div>
   );
