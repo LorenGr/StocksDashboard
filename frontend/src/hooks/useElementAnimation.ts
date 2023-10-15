@@ -2,6 +2,10 @@ import { RefObject } from 'react';
 import './animations.css';
 
 type AnimationFunction = () => void;
+type useElementAnimationMethods = {
+    addShake: (isPositive: boolean) => void,
+    addGlow: (isPositive: boolean) => void
+};
 
 const animationClassNames = [
     'elementAnimation__posShake',
@@ -10,7 +14,7 @@ const animationClassNames = [
     'elementAnimation__negGlow',
 ];
 
-const useElementAnimation = (elementRef: RefObject<HTMLElement | null>) => {
+const useElementAnimation = (elementRef: RefObject<HTMLElement | null>): useElementAnimationMethods => {
 
     let timer: string | number | NodeJS.Timeout | undefined;
 
