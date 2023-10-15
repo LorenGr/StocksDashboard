@@ -79,7 +79,7 @@ select {
 }
 
 .App {
-  padding: 17px 24px 0 18px;
+  padding: 17px 24px 0 0;
   background-color: #e3e3e4;
   min-height: 100%;
 }
@@ -88,12 +88,13 @@ select {
   position: sticky;
   background-color: inherit;
   top: 0;
-  padding-bottom: 45px;
+  padding-bottom: 35px;
+  padding-left: 18px;
   z-index: 1;
 }
 
 @media (max-width: 767px) {
   .App {
-    padding: 17px 2px 0 18px;
+    padding: 17px 2px 0 0;
   }
 }

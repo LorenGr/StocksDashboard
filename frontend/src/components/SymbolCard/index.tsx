@@ -9,6 +9,7 @@ import { useAppSelector } from '@/hooks/redux';
 import { formatLargeNumber } from '@/store/helpers';
 
 type SymbolCardProps = {
+  active: boolean | null;
   id: string;
   onClick: (symbolId: string) => void;
   price: number;
@@ -32,7 +33,7 @@ const getPriceShift = (prevPrice: number, price: number): PriceShift => {
   return null;
 }
 
-const SymbolCard = ({ id, onClick, price }: SymbolCardProps) => {
+const SymbolCard = ({ active, id, onClick, price }: SymbolCardProps) => {
   const [prevPrice, setPrevPrice] = useState<number | null>(null);
   const [priceShift, setPriceShift] = useState<PriceShift | null>(null);
   useEffect(() => {
@@ -56,6 +57,7 @@ const SymbolCard = ({ id, onClick, price }: SymbolCardProps) => {
 
   const symbolCardClasses = [
     'symbolCard',
+    active != null ? (active ? 'symbolCard__active' : 'symbolCard__inactive') : '',
     priceShift?.shake
       ? priceShift?.positive ? 'symbolCard__posShake' : 'symbolCard__negShake'
       : priceShift?.positive ? 'symbolCard__posGlow' : 'symbolCard__negGlow'
