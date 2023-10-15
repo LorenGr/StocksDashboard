@@ -1,6 +1,7 @@
 .priceChart {
   width: 400px;
   height: 300px;
+  overflow: hidden;
   display: flex;
 }
 
@@ -9,6 +10,15 @@
 }
 
 @media (max-width: 1023px) {
+  .priceChart__loader {
+    margin-top: 60px;
+  }
+
+  .priceChart__container {
+    height: 180px;
+    overflow: hidden;
+  }
+
   .priceChart {
     max-height: 250px;
     height: 180px;
