@@ -20,16 +20,18 @@ const SymbolsGrid = ({ onSymbolClick, activeSymbol }: SymbolsGridProps) => {
 
   return (
     <div className="symbolsGrid">
-      {apiState.loading
-        ? <Loading />
-        : stockSymbols.map((id, i) => (
-          <SymbolCard
-            active={activeSymbol == null ? null : activeSymbol == id}
-            price={prices[id]}
-            onClick={onSymbolClick}
-            key={i}
-            id={id} />
-        ))}
+      {apiState.error
+        ? <div>Failed to get stocks</div>
+        : apiState.loading
+          ? <Loading />
+          : stockSymbols.map((id, i) => (
+            <SymbolCard
+              active={activeSymbol == null ? null : activeSymbol == id}
+              price={prices[id]}
+              onClick={onSymbolClick}
+              key={i}
+              id={id} />
+          ))}
     </div>
   );
 };
