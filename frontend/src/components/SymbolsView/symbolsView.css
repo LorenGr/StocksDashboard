@@ -1,6 +1,5 @@
 .symbolsView {
-  padding-bottom: 10px;
-  padding-left: 44px;
+  padding: 0 0 10px 0;
 }
 
 @media (min-width: 1024px) {
@@ -22,7 +21,6 @@
   }
 
   .symbolsView__chart {
-    margin: 0 0 0 -30px;
     position: sticky;
     top: 96px;
     z-index: 1;
@@ -32,6 +30,8 @@
 
 .symbolsView__cards {
   padding-top: 28px;
+  padding-left: 20px;
+  margin-right: 20px;
 }
 
 .symbolsView__chart {
@@ -44,7 +44,7 @@
   }
 
   .symbolsView__cards {
-    padding: 0 20px;
+    padding: 20px;
   }
 
   .symbolsView {
