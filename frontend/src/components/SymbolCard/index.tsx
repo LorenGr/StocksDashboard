@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import './symbolCard.css';
 import { ReactComponent as IndustryLogo } from '@/assets/industry.svg';
 import { ReactComponent as CompanyIcon } from '@/assets/company.svg';
@@ -8,6 +8,7 @@ import { ReactComponent as MarketCapIcon } from '@/assets/market_cap.svg';
 import { useAppSelector } from '@/hooks/redux';
 import { formatLargeNumber } from '@/store/helpers';
 import React from 'react';
+import useElementAnimation from '@/hooks/useElementAnimation';
 
 type SymbolCardProps = {
   active: boolean | null;
@@ -36,6 +37,10 @@ const getPriceShift = (prevPrice: number, price: number): PriceShift => {
 
 const SymbolCard = React.memo(({ active, id, onClick, price }: SymbolCardProps) => {
   const [prevPrice, setPrevPrice] = useState<number | null>(null);
+
+  const cardRef = useRef<any>();
+  const { addShake, addGlow } = useElementAnimation(cardRef);
+
   const [priceShift, setPriceShift] = useState<PriceShift | null>(null);
   useEffect(() => {
     if (prevPrice && price !== prevPrice) { //If price changed
@@ -56,18 +61,26 @@ const SymbolCard = React.memo(({ active, id, onClick, price }: SymbolCardProps) 
     DOWN: Trend_DOWN
   }
 
-  const priceShiftClasses = priceShift?.shake
-    ? priceShift?.positive ? 'symbolCard__posShake' : 'symbolCard__negShake'
-    : priceShift?.positive ? 'symbolCard__posGlow' : 'symbolCard__negGlow';
+  useEffect(() => {
+    if (priceShift?.shake) {
+      priceShift.positive
+        ? addShake(true)
+        : addShake(false);
+    } else {
+      priceShift?.positive
+        ? addGlow(true)
+        : addGlow(false);
+    }
+
+  }, [priceShift]);
 
   const symbolCardClasses = [
     'symbolCard',
-    active != null ? (active ? 'symbolCard__active' : 'symbolCard__inactive') : '',
-    priceShift != null ? priceShiftClasses : ''
+    active != null ? (active ? 'symbolCard__active' : 'symbolCard__inactive') : ''
   ]
 
   return (
-    <div onClick={handleOnClick} className={symbolCardClasses.join(" ")}>
+    <div ref={cardRef} onClick={handleOnClick} className={symbolCardClasses.join(" ")}>
       <div className="symbolCard__title">
         {id}
       </div>
