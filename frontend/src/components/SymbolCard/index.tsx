@@ -7,6 +7,7 @@ import Trend_DOWN from '@/assets/down.png';
 import { ReactComponent as MarketCapIcon } from '@/assets/market_cap.svg';
 import { useAppSelector } from '@/hooks/redux';
 import { formatLargeNumber } from '@/store/helpers';
+import React from 'react';
 
 type SymbolCardProps = {
   active: boolean | null;
@@ -33,7 +34,7 @@ const getPriceShift = (prevPrice: number, price: number): PriceShift => {
   return null;
 }
 
-const SymbolCard = ({ active, id, onClick, price }: SymbolCardProps) => {
+const SymbolCard = React.memo(({ active, id, onClick, price }: SymbolCardProps) => {
   const [prevPrice, setPrevPrice] = useState<number | null>(null);
   const [priceShift, setPriceShift] = useState<PriceShift | null>(null);
   useEffect(() => {
@@ -86,5 +87,5 @@ const SymbolCard = ({ active, id, onClick, price }: SymbolCardProps) => {
       </div>
     </div>
   );
-};
+});
 export default SymbolCard;
