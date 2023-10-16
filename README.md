@@ -3,7 +3,7 @@
 Custom Hook 
 # useElementAnimation
 
-A custom React hook that adds animation classes to an HTML element, allowing for easy integration of click animations in React applications.
+A custom React hook that adds animation classes to an HTML element, allowing for easy integration of transitions in React Components.
 ### Parameters
 - 'elementRef' *(RefObject<HTMLElement | null>)*: A React ref object that references the HTML element to which the animations will be applied.
 ### Returns
