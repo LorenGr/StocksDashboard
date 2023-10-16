@@ -17,6 +17,10 @@
 - Performance Improvements :
   - Memoization of SymbolCard Child Components
   - Lazy Loading of Pages
+ 
+- Possible Future Enhancements :
+  - SymbolsView : Virtual Scrolling of Symbol Cards
+    - Speed-up client side rendering when there are many cards
 
 <a id="useElementAnimation"></a>
 # useElementAnimation *(Custom Hook)* 
