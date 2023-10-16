@@ -1,9 +1,31 @@
 # FE-CHALLENGE
 
-Custom Hook 
-# useElementAnimation
+## Changes
 
-A custom React hook that adds animation classes to an HTML element, allowing for easy integration of click animations in React applications.
+- NavBar Contents and Selection Styling
+
+- SymbolCards
+  - Contents and Selection Styling
+  - Animations during Real-Time Updates
+  - Creation of Custom Hook [useElementAnimation](#useElementAnimation)
+
+- Experience Improvements :
+  - Responsive Behavior on Desktop, Tablet and Mobile Breakpoints
+  - Preloaders added to SymbolCards and PriceChart
+  - Error Handling and NoData Message
+
+- Performance Improvements :
+  - Memoization of SymbolCard Child Components
+  - Lazy Loading of Pages
+ 
+- Possible Future Enhancements :
+  - SymbolsView : Virtual Scrolling of Symbol Cards
+    - Speed-up client side rendering when there are many cards
+
+<a id="useElementAnimation"></a>
+# useElementAnimation *(Custom Hook)* 
+
+A custom React hook that adds animation classes to an HTML element, allowing for easy integration of transitions in React Components.
 ### Parameters
 - 'elementRef' *(RefObject<HTMLElement | null>)*: A React ref object that references the HTML element to which the animations will be applied.
 ### Returns
