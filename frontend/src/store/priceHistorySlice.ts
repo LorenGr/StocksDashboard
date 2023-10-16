@@ -6,7 +6,7 @@ type historyEntry = {
   price: number;
 };
 
-type PriceHistoryResponse = {
+export type PriceHistoryResponse = {
   symbol: string | null;
   history: historyEntry[];
 };
@@ -62,7 +62,9 @@ const priceHistorySlice = createSlice({
 
     builder.addCase(fetchPriceHistory.rejected, (state, action) => {
       state.apiState.error = true;
-      state.apiState.loading = false;
+      //state.apiState.loading = false; 
+      // Commented so that the loader does not
+      // disappear when a previous request is aborted. 
     });
 
     builder.addCase(fetchPriceHistory.pending, (state, action) => {
@@ -77,6 +79,5 @@ const selectors = {
   selectSymbolInfo,
   apiState
 };
-
 export default priceHistorySlice;
 export { selectors };

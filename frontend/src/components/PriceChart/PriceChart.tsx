@@ -1,18 +1,26 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import './priceChart.css';
 import { Line, LineChart, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
-import { fetchPriceHistory, selectors } from '@/store/priceHistorySlice';
+import { PriceHistoryResponse, fetchPriceHistory, selectors } from '@/store/priceHistorySlice';
 import Loading from '../Loading';
+import { AsyncThunkAction } from '@reduxjs/toolkit';
 type PriceChartProps = {
   symbolId: string | null;
   noData: ReactNode
 };
 const PriceChart = ({ noData, symbolId }: PriceChartProps) => {
   const dispatch = useAppDispatch();
+  const [fetchPriceHistoryPromise, setFetchPriceHistoryPromise] = useState<ReturnType<AsyncThunkAction<PriceHistoryResponse, string, {}>> | undefined>();
   useEffect(() => {
     if (symbolId !== null) {
-      dispatch(fetchPriceHistory(symbolId));
+      // Abort previous request
+      if (fetchPriceHistoryPromise) {
+        console.log(`Aborting Request: "${fetchPriceHistoryPromise.requestId}" with ${fetchPriceHistoryPromise.arg}`, fetchPriceHistoryPromise);
+        fetchPriceHistoryPromise?.abort();
+      }
+      const promise = dispatch(fetchPriceHistory(symbolId));
+      setFetchPriceHistoryPromise(promise);
     }
   }, [dispatch, symbolId]);
 
