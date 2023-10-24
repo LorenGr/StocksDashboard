@@ -1,3 +1,7 @@
+## How to start repo
+``
+yarn start
+``
 ## Highlights
 
 - SymbolCards
