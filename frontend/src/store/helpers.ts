@@ -6,6 +6,11 @@ function formatDecimals(number: number) {
         : number.toFixed(1);
 }
 
+/**
+ * Format a number with appropriate suffix and 1 decimal place.
+ * @param number - The number to format.
+ * @returns Formatted string with a suffix (T, B, M, K) and 1 decimal place.
+ */
 export function formatLargeNumber(number: number) {
     let result;
 
