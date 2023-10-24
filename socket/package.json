@@ -3,7 +3,7 @@
   "license": "UNLICENSED",
   "version": "1.0.0",
   "description": "socket simulator for the frontend",
-  "author": "Hristijan Petrovski",
+  "author": "Loren Grixti",
   "dependencies": {
     "ws": "^8.13.0"
   },

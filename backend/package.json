@@ -4,7 +4,7 @@
   "license": "UNLICENSED",
   "description": "backend simulator for the frontend",
   "main": "src/index.js",
-  "author": "Hristijan Petrovski",
+  "author": "Loren Grixti",
   "scripts": {
     "start": "nodemon"
   },
