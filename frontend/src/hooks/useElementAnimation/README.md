@@ -1,5 +1,5 @@
-<a id="useElementAnimation"></a>
-# useElementAnimation *(Custom Hook)* 
+### Custom Hook 
+# useElementAnimation 
 
 A custom React hook that adds animation classes to an HTML element, allowing for easy integration of transitions in React Components.
 ### Parameters
