@@ -1,5 +1,5 @@
 {
-  "name": "mrq-fe-challenge",
+  "name": "stocksdashboard",
   "private": true,
   "workspaces": [
     "backend",
@@ -8,7 +8,7 @@
   ],
   "version": "1.0.0",
   "main": "/",
-  "author": "Hristijan Petrovski",
+  "author": "Loren Grixti",
   "license": "UNLICENSED",
   "scripts": {
     "start": "concurrently \"yarn workspace backend start\" \"yarn workspace socket start\" \"yarn workspace frontend dev\"",

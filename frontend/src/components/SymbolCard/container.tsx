@@ -1,4 +1,4 @@
-import useElementAnimation from "@/hooks/useElementAnimation";
+import useElementAnimation from "@/hooks/useElementAnimation/useElementAnimation";
 import { useEffect, useRef, useState } from "react";
 
 type PriceShift = { positive: boolean, shake: boolean } | null;
