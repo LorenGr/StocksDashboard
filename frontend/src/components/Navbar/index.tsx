@@ -16,10 +16,6 @@ const Navbar = () => {
           <NavLink className={
             ({ isActive }) => isActive ? "nav__link--active" : "nav__link "} to="/profile">Profile</NavLink>
         </li>
-        <li className="nav__item">
-          <NavLink className={
-            ({ isActive }) => isActive ? "nav__link--active" : "nav__link "} to="/statements">Statements</NavLink>
-        </li>
       </ul>
     </nav>
   );

@@ -3,7 +3,10 @@ const ProfileView = () => {
   return (
     <div>
       <h1>Profile Page</h1>
-      <h3>Please consider this as a heavy view with lots of components, data and animations.</h3>
+      <br />
+      <p>Welcome to StockAlerts, your trusted source for real-time stock market updates and valuable insights. Our mission is to empower investors with accurate information and analysis to make informed financial decisions. At StockAlerts, we provide personalized dashboards for monitoring your investments, in-depth market insights, and the latest news to keep you ahead of the curve. Join our community of finance enthusiasts and experience the world of stocks like never before.</p>
+
+
     </div>
   );
 };

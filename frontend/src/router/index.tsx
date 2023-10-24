@@ -5,7 +5,6 @@ import('@/components/ProfileView');
 
 const LazySymbolsView = lazy(() => import('@/components/SymbolsView'));
 const LazProfileView = lazy(() => import('@/components/ProfileView'));
-const LazyStatementsView = lazy(() => import('@/components/StatementsView'));
 
 const Router = () => {
   return (
@@ -19,7 +18,6 @@ const Router = () => {
       <Routes>
         <Route index element={<LazySymbolsView />} />
         <Route index path="profile" element={<LazProfileView />} />
-        <Route index path="statements" element={<LazyStatementsView />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Suspense>
