@@ -7,7 +7,8 @@ interface SymbolCardContainerProps {
     price: number;
     children: React.ReactElement,
     onClick: () => void;
-    active: boolean | null
+    active: boolean | null,
+    cardClassName?: string;
 }
 
 const getPriceShift = (prevPrice: number, price: number): PriceShift => {
@@ -27,7 +28,7 @@ const getPriceShift = (prevPrice: number, price: number): PriceShift => {
     return null;
 }
 
-export const SymbolCardContainer = ({ active, price, children, onClick }: SymbolCardContainerProps) => {
+export const SymbolCardContainer = ({ active, cardClassName, price, children, onClick }: SymbolCardContainerProps) => {
 
     const cardRef = useRef<any>();
     const { addShake, addGlow } = useElementAnimation(cardRef);
@@ -37,6 +38,7 @@ export const SymbolCardContainer = ({ active, price, children, onClick }: Symbol
 
     const symbolCardClasses = [
         'symbolCard',
+        cardClassName || '',
         active != null ? (active ? 'symbolCard__active' : 'symbolCard__inactive') : ''
     ]
 

@@ -11,6 +11,10 @@
   }
 }
 
+.symbolCard__mobile {
+  margin-bottom: 10px;
+}
+
 .symbolCard__active {
   box-shadow: 0 0 20px rgb(0, 0, 0);
   transform: scale(1.06);

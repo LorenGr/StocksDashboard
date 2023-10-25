@@ -10,9 +10,10 @@ type SymbolCardProps = {
   id: string;
   onClick: (symbolId: string) => void;
   price: number;
+  cardClassName?: string;
 };
 
-const SymbolCard = React.memo(({ active, id, onClick, price }: SymbolCardProps) => {
+const SymbolCard = React.memo(({ active, id, cardClassName, onClick, price }: SymbolCardProps) => {
 
   const stockEntities = useAppSelector(
     (state) => state.stocks.entities[id]
@@ -23,6 +24,7 @@ const SymbolCard = React.memo(({ active, id, onClick, price }: SymbolCardProps) 
 
   return (
     <SymbolCardContainer
+      cardClassName={cardClassName}
       active={active}
       onClick={handleOnClick}
       price={price}>

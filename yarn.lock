@@ -1899,6 +1899,11 @@ react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
+react-dynamic-virtual-scroll@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/react-dynamic-virtual-scroll/-/react-dynamic-virtual-scroll-1.4.0.tgz#2529c3c6243a51314bebe304c33c3e1907c5f967"
+  integrity sha512-agw3/kpcP2L5M/2hf7AKsIwxsJ+9RiVedh8vFTsxqvLVYj2pxzSY087et0kMfWnWfAP+m4ns39be7fsRr3okOg==
+
 react-is@^16.10.2, react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
