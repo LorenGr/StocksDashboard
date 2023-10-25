@@ -5,29 +5,23 @@ yarn start
 
 ## Overview
 
-An application that shows a CSS Grid containing Stock Item Cards that are updated in Real Time. The real time updates of Stock values are coming from an active web socket connection. The Stock Item Cards have specific behavior depending on the updated value. If the new value is bigger or smaller then 25% of the previous value then the card will shake through a css animation. The color will also show red or green, depending on whether the new value is a positive or negative change. Clicking upon on each Card shows a Chart that outlines the price history of the selected stock. The application is responsive and reorganises the layout of the cards and the chart depending on the space available on screen.
+StocksDashboard is a sample web application designed for real-time monitoring and analysis of stock market data. This tool provides dynamic insights into stock prices and their fluctuations.
 
-## Highlights
+## Key Features:
 
-- Servers : 
-  - Backend Server : API to provide Prices history
-  - Socket Server : Provide real-time Stock prie updates 
+1. **Real-Time Updates:** StocksDashboard leverages an active WebSocket connection to deliver real-time updates of stock values. Users can stay informed about market changes as they happen.
 
-- SymbolCards
-  - Contents and Selection Styling
-  - Animations during Real-Time Updates
-  - Custom Hook : useElementAnimation
+2. **Responsive Design:** The application offers a seamless user experience across various devices. Its responsive design optimizes layout and functionality to adapt to different screen sizes, ensuring users can access critical information from anywhere.
 
-- UX :
-  - Responsive Behavior on Desktop, Tablet and Mobile Breakpoints
-  - Preloaders to SymbolCards and PriceChart
-  - Error Handling and NoData Message
-  - Handle Fast Clicks on Cards by Aborting previous ongoing calls before making new call
+3. **Dynamic CSS Grid:** Stock items are displayed in a dynamic CSS Grid layout. Each stock item is presented as an interactive card, and the grid auto-adjusts based on available screen space.
 
-- Performance :
-  - Memoization of SymbolCard Child Components
-  - Lazy Loading of Pages
- 
-- Possible Future Enhancements :
-  - SymbolsView : Virtual Scrolling of Symbol Cards
-    - <sub>Speed-up client side rendering when there are many cards</sub>
+4. **Visual Feedback:** Stock Item Cards provide visual feedback on price changes. When a stock's value deviates by more than 25% from its previous value, the card undergoes a subtle shaking animation, highlighting significant changes. Additionally, cards change color to red for negative changes and green for positive changes.
+
+5. **Interactive Charts:** Users can dive deeper into stock performance by clicking on any card. This action opens an interactive chart that displays the price history of the selected stock. This feature empowers users with the tools they need for in-depth analysis.
+
+6. **Optimized Performance:** StocksDashboard ensures smooth user interactions. When a user clicks quickly on multiple cards, the application automatically aborts any previous calls, preventing the accumulation and queuing of requests. This smart handling of rapid clicks enhances performance and responsiveness. There's no memory leak, as the application efficiently manages resources to provide a seamless user experience.
+
+7. **Mobile Optimization:** On mobile devices, StocksDashboard optimizes performance and user experience. Instead of a grid, stock cards are presented within a Virtual Scrolling container, ensuring maximum speed and efficiency on smaller screens.
+
+
+
