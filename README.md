@@ -3,6 +3,15 @@
 yarn start
 ``
 
+## Stack and Packages
+
+- Express
+- React
+- Typescript
+- ReduxToolKit
+- ReactVirtualScroll
+- Recharts
+
 ## Overview
 
 StocksDashboard is a sample web application designed for real-time monitoring and analysis of stock market data. This tool provides dynamic insights into stock prices and their fluctuations.
@@ -23,5 +32,4 @@ StocksDashboard is a sample web application designed for real-time monitoring an
 
 7. **Mobile Optimization:** On mobile devices, StocksDashboard optimizes performance and user experience. Instead of a grid, stock cards are presented within a Virtual Scrolling container, ensuring maximum speed and efficiency on smaller screens.
 
-
-
+8. **Custom Animation Hook:** A custom hook: [useElementAnimation](https://github.com/LorenGr/StocksDashboard/tree/main/frontend/src/hooks/useElementAnimation) is available that simplifies the integration of animations within React components. This hook seamlessly adds animation classes to HTML elements, enabling developers to create smooth and visually appealing transitions in their applications.
