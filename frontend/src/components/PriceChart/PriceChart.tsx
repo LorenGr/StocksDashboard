@@ -33,7 +33,7 @@ const PriceChart = ({ noData, symbolId }: PriceChartProps) => {
       : symbolId
         ? (
           <div className="priceChart">
-            <div>{symbolInfo}</div>
+            <div className="priceChart__activeTitle">{symbolInfo}</div>
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={data.map((e) => ({ ...e, time: new Date(e.time).toLocaleTimeString() }))}>
                 <Line type="monotone" dataKey="price" stroke="#8884d8" dot={false} />
@@ -43,7 +43,7 @@ const PriceChart = ({ noData, symbolId }: PriceChartProps) => {
             </ResponsiveContainer>
           </div>
         )
-        : <div>{noData}</div>
+        : <div className="priceChart__noData">{noData}</div>
   }</div>
 };
 

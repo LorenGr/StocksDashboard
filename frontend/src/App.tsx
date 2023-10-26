@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <div className="App__header">
-        <h2>Stocks Dashboard</h2>
+        <h2 className="App__title">Stocks Dashboard</h2>
         <Navbar />
       </div>
       <Router />

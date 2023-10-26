@@ -15,7 +15,7 @@ const SymbolsView = () => {
         <div className="symbolsView__chart">
           <h3>PRICE HISTORY</h3>
           <PriceChart
-            noData={<span>Select Stock</span>}
+            noData={<span>Select a Stock Card</span>}
             symbolId={activeSymbol} />
         </div>
         <div className="symbolsView__cards">

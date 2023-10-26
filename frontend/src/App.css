@@ -93,6 +93,10 @@ select {
   z-index: 1;
 }
 
+.App__title {
+  font-weight: 200;
+}
+
 @media (max-width: 767px) {
   .App {
     padding: 17px 2px 0 0;

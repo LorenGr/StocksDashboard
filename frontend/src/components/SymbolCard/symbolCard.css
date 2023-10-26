@@ -18,6 +18,12 @@
 .symbolCard__active {
   box-shadow: 0 0 20px rgb(0, 0, 0);
   transform: scale(1.06);
+  background: black;
+  color: white;
+
+  .symbolCard__title {
+    color: yellow;
+  }
 }
 
 .symbolCard__inactive {

@@ -9,6 +9,19 @@
   margin-top: 130px;
 }
 
+.priceChart__noData {
+  text-align: center;
+  line-height: 180px;
+}
+
+.priceChart__activeTitle {
+  background: yellow;
+  padding: 11px;
+  border-radius: 5px;
+  height: 46px;
+}
+
+
 @media (max-width: 1023px) {
   .priceChart__loader {
     margin-top: 60px;
