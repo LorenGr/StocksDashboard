@@ -17,6 +17,17 @@ yarn start
 StocksDashboard is a sample web application designed for real-time monitoring and analysis of stock market data. This tool provides dynamic insights into stock prices and their fluctuations.
 
 ## Key Features:
+ 
+- WebSockets
+- Responsive Design
+- CSS Grid / Auto Layout
+- Animations
+- Charts
+- Abort Previous Calls
+- Virtual Scrolling
+- Custom Hook
+
+## Features:
 
 1. **Real-Time Updates:** StocksDashboard leverages an active **<u>WebSocket</u>** connection to deliver real-time updates of stock values. Users can stay informed about market changes as they happen.
 
