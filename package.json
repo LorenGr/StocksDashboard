@@ -2,8 +2,6 @@
   "name": "stocksdashboard",
   "private": true,
   "workspaces": [
-    "backend",
-    "socket",
     "frontend"
   ],
   "version": "1.0.0",
@@ -11,10 +9,7 @@
   "author": "Loren Grixti",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "concurrently \"yarn workspace backend start\" \"yarn workspace socket start\" \"yarn workspace frontend dev\"",
-    "postinstall": "concurrently \"yarn workspace backend install\" \"yarn workspace socket install\" \"yarn workspace frontend install\""
-  },
-  "dependencies": {
-    "concurrently": "^8.0.1"
+    "dev": "yarn workspace frontend dev",
+    "dev:vercel": "yarn workspace frontend dev:vercel"
   }
 }

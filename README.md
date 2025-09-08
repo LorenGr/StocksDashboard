@@ -1,11 +1,11 @@
 ## How to start repo
-``
-yarn start
-``
+```
+yarn dev
+```
 
 ## Stack and Packages
 
-- Express
+- Vercel Serverless API (Edge WS)
 - React
 - Typescript
 - ReduxToolKit

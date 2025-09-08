@@ -5,7 +5,9 @@
   "type": "module",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently -k -n ws,vite \"yarn dev:ws\" \"vite\"",
+    "dev:ws": "node scripts/dev-ws.mjs",
+    "dev:vercel": "vercel dev",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
@@ -28,6 +30,8 @@
     "prettier": "^2.8.7",
     "typescript": "^4.9.3",
     "vite": "^4.2.0",
+    "concurrently": "^8.2.2",
+    "ws": "^8.13.0",
     "vite-tsconfig-paths": "^4.0.7"
   }
 }

@@ -1,4 +1,4 @@
-const mulberry32 = (a) => {
+module.exports = function mulberry32(a) {
   return function () {
     var t = (a += 0x6d2b79f5);
     t = Math.imul(t ^ (t >>> 15), t | 1);
@@ -7,4 +7,3 @@ const mulberry32 = (a) => {
   };
 };
 
-module.exports = mulberry32;

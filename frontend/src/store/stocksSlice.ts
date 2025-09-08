@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '@/store/index';
+import { API_BASE } from '@/config';
 
 type Stock = {
   symbol: string;
@@ -36,7 +37,7 @@ export const fetchAllStocks = createAsyncThunk(
   'stocks/fetchAllStocks',
   // if you type your function argument here
   async () => {
-    const response = await fetch(`http://localhost:3100/api/stocks`);
+    const response = await fetch(`${API_BASE}/api/stocks`);
     return (await response.json()) as Stock[];
   }
 );

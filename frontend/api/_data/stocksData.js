@@ -1,3 +1,4 @@
+// Copied from backend/src/data/stocksData.js
 const stocks = [
   {
     symbol: "NVDA",

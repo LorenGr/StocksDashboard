@@ -1,1 +1,0 @@
-# Socket simulator for the assignment.
