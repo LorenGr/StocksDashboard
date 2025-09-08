@@ -138,4 +138,4 @@ const stocks = [
   },
 ];
 
-module.exports = stocks;
+export default stocks;
