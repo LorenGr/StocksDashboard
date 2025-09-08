@@ -1,5 +1,6 @@
 // Edge WebSocket endpoint for live price updates on Vercel
-// Runtime is set to Edge via vercel.json
+// Declare Edge runtime here to avoid needing per-project vercel.json runtime mapping
+export const config = { runtime: 'edge' };
 
 export default function handler(req) {
   const upgrade = req.headers.get('upgrade') || '';
@@ -43,4 +44,3 @@ export default function handler(req) {
 
   return new Response(null, { status: 101, webSocket: client });
 }
-
