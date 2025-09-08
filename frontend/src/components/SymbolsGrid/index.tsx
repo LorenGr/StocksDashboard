@@ -18,14 +18,17 @@ interface SymbolsGridProps extends SymbolsGridWrapperProps {
 }
 
 const SymbolsGridDesktop = ({ stockSymbols, prices, onSymbolClick, activeSymbol }: SymbolsGridProps) => (
-  (stockSymbols.map((id, i) => (
-    <SymbolCard
-      active={activeSymbol == null ? null : activeSymbol == id}
-      price={prices[id]}
-      onClick={onSymbolClick}
-      key={i}
-      id={id} />
-  )))
+  <>
+    {stockSymbols.map((id, i) => (
+      <SymbolCard
+        active={activeSymbol == null ? null : activeSymbol == id}
+        price={prices[id]}
+        onClick={onSymbolClick}
+        key={i}
+        id={id}
+      />
+    ))}
+  </>
 );
 
 const SymbolsGridMobile = ({ stockSymbols, prices, onSymbolClick, activeSymbol }: SymbolsGridProps) =>
