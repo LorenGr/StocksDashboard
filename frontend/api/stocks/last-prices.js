@@ -1,4 +1,4 @@
-const stocks = require('../_data/stocksData');
+import stocks from '../_data/stocksData.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
@@ -7,4 +7,3 @@ export default async function handler(req, res) {
   }
   res.status(200).json(stocks);
 }
-

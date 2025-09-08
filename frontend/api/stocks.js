@@ -1,5 +1,5 @@
-const stocks = require('./_data/stocksData');
-const delay = require('./_lib/delayPromise');
+import stocks from './_data/stocksData.js';
+import delay from './_lib/delayPromise.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
@@ -9,4 +9,3 @@ export default async function handler(req, res) {
   await delay(Math.random() * 500);
   res.status(200).json(stocks);
 }
-

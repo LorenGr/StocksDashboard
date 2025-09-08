@@ -3,6 +3,8 @@
     "api/ws.js": {
       "runtime": "edge"
     }
-  }
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
 }
-

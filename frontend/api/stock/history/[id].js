@@ -1,5 +1,5 @@
-const delay = require('../../_lib/delayPromise');
-const mulberry32 = require('../../_lib/mulberry32');
+import delay from '../../_lib/delayPromise.js';
+import mulberry32 from '../../_lib/mulberry32.js';
 
 function randomNumberFromString(str) {
   let hash = 0;
@@ -30,4 +30,3 @@ export default async function handler(req, res) {
 
   res.status(200).json({ symbol: id ?? null, history });
 }
-
